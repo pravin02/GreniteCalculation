@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+<!-- BEGIN HEAD -->
+
+<head>
+    <meta charset="utf-8" />
+    <title> Ceramic calculation sample</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body ng-controller="IndexController">
+
+    <div class="container">
+        <h2> Ceramic calculation test </h2>
+        <div class="row">
+            <!-- <div class="col-md-2">
+                <select class="form-control" ng-model="product" ng-options="p as p.name for p in products"></select>
+            </div> -->
+            <!-- <div class="col-md-2">
+                <select class="form-control" ng-model="type" ng-options="t as t for t in types"></select>
+            </div> -->
+
+            <div class="col-md-2">
+                <label> Width in Inches</label>
+                <input class="form-control" ng-model="product.widthInInches" ng-change="calculate(product)" placeholder="widthInInches" />
+            </div>
+            <div class="col-md-2">
+                <label> Height in Inches</label>
+                <input class="form-control" ng-model="product.heightInInches" ng-change="calculate(product)"
+                    placeholder="heightInInches" />
+            </div>
+            <div class="col-md-2">
+                <label> Quantity</label>
+                <input class="form-control" ng-model="product.quantity" placeholder="Quantity" 
+                ng-change="calculate(product)"
+                />
+            </div>
+
+            <div class="col-md-2">
+                <label> Area in Sq Ft.</label>
+                <input class="form-control" ng-model="product.areaInSqFt" placeholder="areaInSqFt" disabled />
+            </div>
+
+
+            <div class="col-md-2">
+                <label> Per Sq. Ft. cost</label>
+                <input class="form-control" ng-model="product.perSqFtCost" placeholder="perSqFtCost" ng-change="calculate(product)" />
+            </div>
+            <div class="col-md-2">
+                <label> Amount </label>
+                <input class="form-control" ng-model="product.amount" placeholder="amount" />
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery 3 -->
+    <script src="assets/jquery/dist/jquery.min.js"></script>
+    <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- BEGIN ANGULARJS SCRIPTS -->
+    <script src="assets/angularjs/angular.min.js"></script>
+
+    <script src="products.js"></script>
+    <script src="IndexController.js"></script>
+
+</html>
